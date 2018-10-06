@@ -33,5 +33,17 @@ namespace DazaBanych.Properties {
                 return ((string)(this["AddressBookConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=den1.mssql3.gear.host;Initial Catalog=addressbook1;User ID=addressboo" +
+            "k1;Password=Pp39QUmWc!!h;Connect Timeout=30;Encrypt=False;TrustServerCertificate" +
+            "=False")]
+        public string addressbook1ConnectionString {
+            get {
+                return ((string)(this["addressbook1ConnectionString"]));
+            }
+        }
     }
 }

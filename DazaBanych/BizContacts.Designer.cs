@@ -467,7 +467,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFName;
-        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtLName;   
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtState;

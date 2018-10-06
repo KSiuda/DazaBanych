@@ -44,7 +44,7 @@ namespace DazaBanych
                 dataAdapter.Fill(table); // fill the datatable
                 bindingSource1.DataSource = table; //set the datasource on the binding source to the table
             }
-            catch (SqlException ex)
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message); //show a message about the exception
             }
@@ -88,10 +88,10 @@ namespace DazaBanych
                     MessageBox.Show(ex.Message);
                 }
 
-            }
+                }
             GetData("SELECT * FROM BizContacts;"); //gets all data - including about lately inserted bizcontact
             dataGridView1.Update(); //updates datagridview with freshly selected information
-
+                                    
         }
     }
 }
