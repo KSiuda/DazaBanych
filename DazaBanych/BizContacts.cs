@@ -13,7 +13,7 @@ namespace DazaBanych
 {
     public partial class BizContacts : Form
     {
-        string connectString = @"Data Source=DESKTOP-JHQVTAH;Initial Catalog=AddressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connectString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=addressbook1;User ID=addressbook1;Password=Pp39QUmWc!!h;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlDataAdapter dataAdapter; //object to connect program with DB
         DataTable table; // variable program table
@@ -57,7 +57,7 @@ namespace DazaBanych
 
             SqlCommand command;
             string insert = @"INSERT INTO BizContacts 
-                                                    (Date_Addedd, Company, Website, Title, First_Name, Last_Name, Address, City, State, Postal_Code, Email, Mobile, Notes)
+                                                    (Date_Added, Company, Website, Title, First_Name, Last_Name, Address, City, State, Postal_Code, Email, Mobile, Notes)
                               VALUES 
                                                     (@Date_Added, @Company, @Website, @Title, @First_Name, @Last_Name, @Address, @City, @State, @Postal_Code, @Email, @Mobile, @Notes);";
 
@@ -68,7 +68,7 @@ namespace DazaBanych
                 {
                     conn.Open(); //open connection
                     command = new SqlCommand(insert, conn);
-                    command.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date); //read value from form and save to table
+                    command.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date); //read value from form and save to the table
                     command.Parameters.AddWithValue(@"Company", txtCompany.Text);
                     command.Parameters.AddWithValue(@"Website", txtWebsite.Text);
                     command.Parameters.AddWithValue(@"Title", txtTitle.Text);

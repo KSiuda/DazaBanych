@@ -22,7 +22,7 @@ namespace DazaBanych
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AddressBook")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="addressbook1")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,13 +30,13 @@ namespace DazaBanych
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBizContacts(BizContacts instance);
-    partial void UpdateBizContacts(BizContacts instance);
-    partial void DeleteBizContacts(BizContacts instance);
+    partial void InsertBizContact(BizContact instance);
+    partial void UpdateBizContact(BizContact instance);
+    partial void DeleteBizContact(BizContact instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::DazaBanych.Properties.Settings.Default.AddressBookConnectionString, mappingSource)
+				base(global::DazaBanych.Properties.Settings.Default.addressbook1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -65,24 +65,24 @@ namespace DazaBanych
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<BizContacts> BizContacts
+		public System.Data.Linq.Table<BizContact> BizContacts
 		{
 			get
 			{
-				return this.GetTable<BizContacts>();
+				return this.GetTable<BizContact>();
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BizContacts")]
-	public partial class BizContacts : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class BizContact : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private System.DateTime _Date_Addedd;
+		private System.DateTime _Date_Added;
 		
 		private string _Company;
 		
@@ -114,8 +114,8 @@ namespace DazaBanych
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnDate_AddeddChanging(System.DateTime value);
-    partial void OnDate_AddeddChanged();
+    partial void OnDate_AddedChanging(System.DateTime value);
+    partial void OnDate_AddedChanged();
     partial void OnCompanyChanging(string value);
     partial void OnCompanyChanged();
     partial void OnWebsiteChanging(string value);
@@ -142,7 +142,10 @@ namespace DazaBanych
     partial void OnNotesChanged();
     #endregion
 		
-		
+		public BizContact()
+		{
+			OnCreated();
+		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
@@ -164,22 +167,22 @@ namespace DazaBanych
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Addedd", DbType="DateTime NOT NULL")]
-		public System.DateTime Date_Addedd
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Added", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Added
 		{
 			get
 			{
-				return this._Date_Addedd;
+				return this._Date_Added;
 			}
 			set
 			{
-				if ((this._Date_Addedd != value))
+				if ((this._Date_Added != value))
 				{
-					this.OnDate_AddeddChanging(value);
+					this.OnDate_AddedChanging(value);
 					this.SendPropertyChanging();
-					this._Date_Addedd = value;
-					this.SendPropertyChanged("Date_Addedd");
-					this.OnDate_AddeddChanged();
+					this._Date_Added = value;
+					this.SendPropertyChanged("Date_Added");
+					this.OnDate_AddedChanged();
 				}
 			}
 		}
@@ -204,7 +207,7 @@ namespace DazaBanych
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(MAX)")]
 		public string Website
 		{
 			get
@@ -384,7 +387,7 @@ namespace DazaBanych
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="NVarChar(100)")]
 		public string Mobile
 		{
 			get

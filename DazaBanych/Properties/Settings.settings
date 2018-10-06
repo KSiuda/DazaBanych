@@ -10,5 +10,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-JHQVTAH;Initial Catalog=AddressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True</Value>
     </Setting>
+    <Setting Name="addressbook1ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=den1.mssql3.gear.host;Initial Catalog=addressbook1;User ID=addressbook1;Password=Pp39QUmWc!!h;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=den1.mssql3.gear.host;Initial Catalog=addressbook1;User ID=addressbook1;Password=Pp39QUmWc!!h;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
