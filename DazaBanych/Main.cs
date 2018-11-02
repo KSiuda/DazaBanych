@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace DazaBanych
 {
@@ -42,6 +43,12 @@ namespace DazaBanych
         private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal); //tile horizontal the child from inside the main
+        }
+
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Configurat form = new Configurat();
+            form.Show();
         }
     }
 }
